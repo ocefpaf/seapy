@@ -24,7 +24,7 @@ before_install:
   - source activate TEST
 
 install:
-  - python setup.py sdist && version=$(python setup.py --version) && pushd dist  && pip install seapy-${version}.tar.gz && popd
+  - python setup.py build_ext --inplace install
 
 script:
   - if [[ $TEST_TARGET == 'default' ]]; then
